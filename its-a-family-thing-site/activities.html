@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Things To Do • It’s a Family Thing</title>
+  <meta name="description" content="Family-friendly things to do in Orlando, Florida, with booking links." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/config.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">🎉</div>
+        <div class="brand-text">
+          <div class="brand-title">It’s a Family Thing</div>
+          <div class="brand-subtitle">Orlando, Florida • July 2–6, 2026</div>
+        </div>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="rsvp.html">RSVP</a>
+        <a class="nav-link" href="schedule.html">Schedule</a>
+        <a class="nav-link" href="payments.html">Payments</a>
+        <a class="nav-link active" href="activities.html">Things To Do</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Things To Do in Orlando</h1>
+        <p class="lead">Pick what fits your family — theme parks, wildlife, views, and indoor fun.</p>
+        <div class="note">
+          These links go to official ticket/booking pages. Always check hours, age/height requirements, and weather.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="filters card">
+          <button class="chip active" data-filter="all" type="button">All</button>
+          <button class="chip" data-filter="theme" type="button">Theme Parks</button>
+          <button class="chip" data-filter="views" type="button">Views & Attractions</button>
+          <button class="chip" data-filter="wildlife" type="button">Wildlife & Nature</button>
+          <button class="chip" data-filter="indoor" type="button">Indoor Fun</button>
+        </div>
+
+        <div class="grid-3 cards" id="activityGrid">
+          <article class="card activity" data-tags="theme">
+            <h2 class="h4">Walt Disney World</h2>
+            <p>Classic Orlando magic for all ages.</p>
+            <a class="btn btn-outline" href="https://disneyworld.disney.go.com/admission/tickets/" target="_blank" rel="noopener">Tickets</a>
+          </article>
+
+          <article class="card activity" data-tags="theme">
+            <h2 class="h4">Universal Orlando Resort</h2>
+            <p>Big thrills + family favorites (Harry Potter & more).</p>
+            <a class="btn btn-outline" href="https://www.universalorlando.com/web/en/us/tickets-packages/park-tickets" target="_blank" rel="noopener">Tickets</a>
+          </article>
+
+          <article class="card activity" data-tags="theme">
+            <h2 class="h4">SeaWorld Orlando</h2>
+            <p>Coasters, shows, and animal experiences.</p>
+            <a class="btn btn-outline" href="https://seaworld.com/orlando/tickets/" target="_blank" rel="noopener">Tickets</a>
+          </article>
+
+          <article class="card activity" data-tags="views">
+            <h2 class="h4">ICON Park</h2>
+            <p>Restaurants + attractions on International Drive.</p>
+            <a class="btn btn-outline" href="https://iconparkorlando.com/" target="_blank" rel="noopener">Explore</a>
+          </article>
+
+          <article class="card activity" data-tags="views">
+            <h2 class="h4">The Orlando Eye</h2>
+            <p>400‑ft views that everyone can enjoy.</p>
+            <a class="btn btn-outline" href="https://www.theorlandoeye.com/tickets/" target="_blank" rel="noopener">Book tickets</a>
+          </article>
+
+          <article class="card activity" data-tags="wildlife">
+            <h2 class="h4">Gatorland</h2>
+            <p>“Alligator Capital of the World” — family-friendly and very Florida.</p>
+            <a class="btn btn-outline" href="https://www.gatorland.com/tickets/" target="_blank" rel="noopener">Tickets</a>
+          </article>
+
+          <article class="card activity" data-tags="wildlife">
+            <h2 class="h4">Wild Florida Airboats & Safari</h2>
+            <p>Airboat tours + drive‑thru safari park.</p>
+            <a class="btn btn-outline" href="https://www.wildfloridairboats.com/tickets" target="_blank" rel="noopener">Book</a>
+          </article>
+
+          <article class="card activity" data-tags="wildlife">
+            <h2 class="h4">Kennedy Space Center Visitor Complex</h2>
+            <p>Day trip idea (about an hour away) — rockets, exhibits, and NASA history.</p>
+            <a class="btn btn-outline" href="https://www.kennedyspacecenter.com/" target="_blank" rel="noopener">Tickets</a>
+          </article>
+
+          <article class="card activity" data-tags="indoor">
+            <h2 class="h4">Andretti Indoor Karting & Games</h2>
+            <p>Indoor racing + arcade games — great for teens and adults.</p>
+            <a class="btn btn-outline" href="https://andrettikarting.com/orlando" target="_blank" rel="noopener">Details</a>
+          </article>
+        </div>
+
+        <div class="note">
+          Want me to add restaurants, a “kids-only” list, or activities within 15 minutes of your hotel? Tell me your hotel area (International Drive, Lake Buena Vista, Kissimmee, etc.).
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> It’s a Family Thing • Orlando 2026</div>
+      <div class="footer-links">
+        <a href="rsvp.html">RSVP</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="payments.html">Payments</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

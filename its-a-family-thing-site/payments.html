@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Payments • It’s a Family Thing</title>
+  <meta name="description" content="Pay reunion dues with Stripe and keep track of your payment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/config.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">🎉</div>
+        <div class="brand-text">
+          <div class="brand-title">It’s a Family Thing</div>
+          <div class="brand-subtitle">Orlando, Florida • July 2–6, 2026</div>
+        </div>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="rsvp.html">RSVP</a>
+        <a class="nav-link" href="schedule.html">Schedule</a>
+        <a class="nav-link active" href="payments.html">Payments</a>
+        <a class="nav-link" href="activities.html">Things To Do</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="container">
+        <h1>Payments</h1>
+        <p class="lead">Simple, secure payments through Stripe.</p>
+        <div class="note">
+          <strong>Fastest setup:</strong> create a <em>Stripe Payment Link</em>, then paste it into <code>js/config.js</code>.
+          No coding and no server needed.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="two-col">
+          <div class="card">
+            <h2 class="h3">Pay reunion dues</h2>
+            <p>
+              Suggested dues (edit anytime):<br/>
+              <strong id="duesText"></strong>
+            </p>
+
+            <div class="pay-box">
+              <a id="stripePayBtn" class="btn btn-primary" href="#" target="_blank" rel="noopener">Pay with Stripe</a>
+              <button id="markPaidBtn" class="btn btn-outline" type="button">I already paid (mark on this device)</button>
+              <div class="tiny">Marking “paid” is stored only on <em>your</em> device (helpful for your own tracking).</div>
+            </div>
+
+            <div class="status">
+              <span class="pill small">Status: <strong id="paidStatus">Not marked paid</strong></span>
+              <span class="pill small">Last update: <strong id="paidDate">—</strong></span>
+            </div>
+
+            <hr class="hr"/>
+
+            <h3 class="h4">Contact</h3>
+            <p class="tiny">
+              Update this in <code>js/config.js</code>:
+              <br/>
+              <strong id="contactLine"></strong>
+            </p>
+          </div>
+
+          <aside class="card">
+            <h2 class="h3">How to set up Stripe (5 minutes)</h2>
+            <ol class="steps">
+              <li>Create a Stripe account (or sign in).</li>
+              <li>Go to <strong>Payment Links</strong> → Create → choose “Reunion Dues”.</li>
+              <li>Set amount (or multiple options), add description, then publish.</li>
+              <li>Copy the Payment Link URL.</li>
+              <li>Paste it into <code>js/config.js</code> as <code>STRIPE_PAYMENT_LINK</code>.</li>
+            </ol>
+            <div class="note">
+              Want a full “Checkout” flow with custom fields? That requires a small backend.
+              Payment Links are the easiest and still look professional.
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> It’s a Family Thing • Orlando 2026</div>
+      <div class="footer-links">
+        <a href="rsvp.html">RSVP</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="activities.html">Activities</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RSVP • It’s a Family Thing</title>
+  <meta name="description" content="RSVP for the family reunion in Orlando, July 2–6, 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+  <script defer src="js/config.js"></script>
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">🎉</div>
+        <div class="brand-text">
+          <div class="brand-title">It’s a Family Thing</div>
+          <div class="brand-subtitle">Orlando, Florida • July 2–6, 2026</div>
+        </div>
+      </div>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="site-nav" aria-label="Primary">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="rsvp.html">RSVP</a>
+        <a class="nav-link" href="schedule.html">Schedule</a>
+        <a class="nav-link" href="payments.html">Payments</a>
+        <a class="nav-link" href="activities.html">Things To Do</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="page-hero">
+      <div class="container">
+        <h1>RSVP</h1>
+        <p class="lead">Tell us who’s coming — it helps us plan food, shirts, and activities.</p>
+        <div class="note">
+          <strong>Privacy note:</strong> This demo RSVP saves to <em>your device</em> (localStorage).
+          To collect RSVPs from everyone, connect this form to Google Forms / Formspree / Airtable.
+          See the comment inside <code>js/main.js</code>.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="two-col">
+          <form id="rsvpForm" class="card form" autocomplete="on">
+            <div class="form-row">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" placeholder="e.g., Jordan Smith" required />
+            </div>
+
+            <div class="form-row split">
+              <div>
+                <label for="email">Email (optional)</label>
+                <input id="email" name="email" type="email" placeholder="name@email.com" />
+              </div>
+              <div>
+                <label for="phone">Phone (optional)</label>
+                <input id="phone" name="phone" type="tel" placeholder="(555) 555-5555" />
+              </div>
+            </div>
+
+            <div class="form-row split">
+              <div>
+                <label for="adults">Adults</label>
+                <input id="adults" name="adults" type="number" min="0" value="1" required />
+              </div>
+              <div>
+                <label for="kids">Kids</label>
+                <input id="kids" name="kids" type="number" min="0" value="0" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label for="arrival">Arrival date</label>
+              <select id="arrival" name="arrival" required>
+                <option value="July 2">July 2</option>
+                <option value="July 3">July 3</option>
+                <option value="July 4">July 4</option>
+                <option value="July 5">July 5</option>
+                <option value="July 6">July 6</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="tshirt">T‑shirt size (optional)</label>
+              <select id="tshirt" name="tshirt">
+                <option value="">Select</option>
+                <option>YS</option><option>YM</option><option>YL</option>
+                <option>AS</option><option>AM</option><option>AL</option><option>AXL</option><option>A2XL</option><option>A3XL</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="notes">Notes (allergies, accessibility, etc.)</label>
+              <textarea id="notes" name="notes" rows="4" placeholder="Anything we should know?"></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button class="btn btn-primary" type="submit">Save RSVP</button>
+              <button class="btn btn-outline" type="button" id="downloadRsvps">Download RSVPs (CSV)</button>
+            </div>
+
+            <p class="tiny">Need to clear test RSVPs? <button class="link-btn" type="button" id="clearRsvps">Clear saved RSVPs</button></p>
+          </form>
+
+          <aside class="card">
+            <h2 class="h3">Saved RSVPs (this device)</h2>
+            <div class="pill-row">
+              <span class="pill small">Adults: <strong id="sumAdults">0</strong></span>
+              <span class="pill small">Kids: <strong id="sumKids">0</strong></span>
+              <span class="pill small">Parties: <strong id="sumParties">0</strong></span>
+            </div>
+
+            <div id="rsvpList" class="rsvp-list" aria-live="polite"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> It’s a Family Thing • Orlando 2026</div>
+      <div class="footer-links">
+        <a href="schedule.html">Schedule</a>
+        <a href="payments.html">Payments</a>
+        <a href="activities.html">Activities</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
